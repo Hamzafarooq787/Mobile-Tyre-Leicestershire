@@ -1,96 +1,129 @@
-import Image from 'next/image';
-import Link from 'next/link';
-
-export function ServicesPreview() {
+export default function ServicesPreview() {
   return (
-    <section className="py-24 px-4 md:px-10 bg-background-light dark:bg-background-dark" id="services">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h3 className="text-primary font-black uppercase tracking-[0.2em] text-sm mb-4">What We Do</h3>
-          <h2 className="text-3xl md:text-5xl font-black dark:text-white">Our Professional Services</h2>
-          <div className="w-24 h-1.5 bg-primary mx-auto mt-6 rounded-full"></div>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Service 1 */}
-          <div className="group p-8 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-primary transition-all duration-300 shadow-sm hover:shadow-xl dark:shadow-none">
-            <div className="bg-primary/10 group-hover:bg-primary p-4 rounded-xl w-fit mb-6 transition-colors">
-              <span className="material-symbols-outlined text-primary group-hover:text-background-dark text-4xl">
-                battery_charging_full
-              </span>
+    <section className="py-20 bg-card" data-purpose="features-grid" id="services">
+      <div className="container mx-auto px-4 text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Our Premium Services</h2>
+        <div className="w-24 h-1 bg-primary mx-auto"></div>
+      </div>
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Benefit 1 */}
+          <div className="bg-background p-8 rounded-custom border border-border hover:border-primary transition-colors group">
+            {/* Added image */}
+            <img
+              src="/services/s7.jpeg"
+              alt="24/7 Emergency Service"
+              className="w-full h-40 object-cover rounded-t-custom mb-4"
+            />
+            <div className="text-primary mb-6 transition-transform group-hover:scale-110">
+              <svg
+                className="h-12 w-12"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                />
+              </svg>
             </div>
-            <div className="relative w-full aspect-video rounded-xl mb-6 overflow-hidden border border-white/10 shadow-lg">
-              <Image
-                src="/services/Battery & Jump Starter.jpg"
-                alt="Battery Jump Start Service"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <h3 className="text-2xl font-bold mb-4 dark:text-white">Battery &amp; Jump Starter</h3>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-              Dead battery? We provide quick on-site jumpstart services and high-quality battery replacements for all vehicle makes and models.
+            <h3 className="text-xl font-bold mb-3 text-foreground">24/7 Emergency Service</h3>
+            <p className="text-muted-foreground">
+              Locked out or flat tyre in the middle of the night? We're available 24/7 to get you back on the
+              road.
             </p>
-            <Link
-              href="/services"
-              className="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all"
-            >
-              Request Assistance <span className="material-symbols-outlined">arrow_forward</span>
-            </Link>
           </div>
-
-          {/* Service 2 */}
-          <div className="group p-8 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-primary transition-all duration-300 shadow-sm hover:shadow-xl dark:shadow-none">
-            <div className="bg-primary/10 group-hover:bg-primary p-4 rounded-xl w-fit mb-6 transition-colors">
-              <span className="material-symbols-outlined text-primary group-hover:text-background-dark text-4xl">
-                auto_towing
-              </span>
+          {/* Benefit 2 */}
+          <div className="bg-background p-8 rounded-custom border border-border hover:border-primary transition-colors group">
+            {/* Added image */}
+            <img
+              src="/services/s8.jpg"
+              alt="Competitive Prices"
+              className="w-full h-40 object-cover rounded-t-custom mb-4"
+            />
+            <div className="text-primary mb-6 transition-transform group-hover:scale-110">
+              <svg
+                className="h-12 w-12"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                />
+              </svg>
             </div>
-            <div className="relative w-full aspect-video rounded-xl mb-6 overflow-hidden border border-white/10 shadow-lg">
-              <Image
-                src="/services/Car Towing Services.jpg"
-                alt="Car Towing Service"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <h3 className="text-2xl font-bold mb-4 dark:text-white">Car Towing Services</h3>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-              Safe and secure flatbed towing for cars, SUVs, and luxury vehicles. We treat your vehicle with the utmost care across the UAE.
+            <h3 className="text-xl font-bold mb-3 text-foreground">Competitive Prices</h3>
+            <p className="text-muted-foreground">
+              High-quality service doesn't have to break the bank. We offer transparent pricing with no hidden
+              fees.
             </p>
-            <Link
-              href="/services"
-              className="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all"
-            >
-              Request Towing <span className="material-symbols-outlined">arrow_forward</span>
-            </Link>
           </div>
-
-          {/* Service 3 */}
-          <div className="group p-8 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-primary transition-all duration-300 shadow-sm hover:shadow-xl dark:shadow-none">
-            <div className="bg-primary/10 group-hover:bg-primary p-4 rounded-xl w-fit mb-6 transition-colors">
-              <span className="material-symbols-outlined text-primary group-hover:text-background-dark text-4xl">
-                build_circle
-              </span>
+          {/* Benefit 3 */}
+          <div className="bg-background p-8 rounded-custom border border-border hover:border-primary transition-colors group">
+            {/* Added image */}
+            <img
+              src="/services/s9.avif"
+              alt="All Major Brands"
+              className="w-full h-40 object-cover rounded-t-custom mb-4"
+            />
+            <div className="text-primary mb-6 transition-transform group-hover:scale-110">
+              <svg
+                className="h-12 w-12"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                />
+              </svg>
             </div>
-            <div className="relative w-full aspect-video rounded-xl mb-6 overflow-hidden border border-white/10 shadow-lg">
-              <Image
-                src="/services/Car Recovery Services.png"
-                alt="Car Recovery Service"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <h3 className="text-2xl font-bold mb-4 dark:text-white">Car Recovery Services</h3>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-              Specialized recovery for breakdowns, accidents, and off-road pulls. Our experienced team is equipped for any situation.
+            <h3 className="text-xl font-bold mb-3 text-foreground">All Major Brands</h3>
+            <p className="text-muted-foreground">
+              We stock a wide range of premium, mid-range, and budget tyres for cars, SUVs, and vans.
             </p>
-            <Link
-              href="/services"
-              className="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all"
-            >
-              Request Recovery <span className="material-symbols-outlined">arrow_forward</span>
-            </Link>
+          </div>
+          {/* Benefit 4 */}
+          <div className="bg-background p-8 rounded-custom border border-border hover:border-primary transition-colors group">
+            {/* Added image */}
+            <img
+              src="/services/s10.webp"
+              alt="Fully Equipped Van"
+              className="w-full h-40 object-cover rounded-t-custom mb-4"
+            />
+            <div className="text-primary mb-6 transition-transform group-hover:scale-110">
+              <svg
+                className="h-12 w-12"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-foreground">Fully Equipped Van</h3>
+            <p className="text-muted-foreground">
+              Our mobile workshops have the latest digital balancing and fitting technology on board.
+            </p>
           </div>
         </div>
       </div>

@@ -1,53 +1,46 @@
-import Image from 'next/image';
-
-export function ProfessionalSection() {
+export default function ProfessionalSection() {
   return (
-    <section className="py-24 px-4 md:px-10 overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center">
-        <div className="md:w-1/2">
-          <Image
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDER0A8_Lcz0L95-fOyb2jYe21WihbXyH9G_JHpB7EZb9-83b4RJo81dnPQI97rNZWHMiAsqF-SU--gw0KZEPUxpZAJQ8Ubs7bQbTHJMWbsD4r5JcZTPKhqdtvI4otA32fMzUTHOYUQUyxUm9ybi6yGCmsYlRxZlF9B4ImAqgQkgtXt8n8R40zEsvTyzC3FASUv8Se-zcyufWTPoy549q887ob4oU_9LCnlk6jctsC27cYfSffyQwXWKZ8LIul49k-OvLjhRD38S74"
-            alt="Luxury car being loaded onto a modern tow truck"
-            width={800}
-            height={600}
-            className="rounded-3xl shadow-2xl"
-          />
-        </div>
-        <div className="md:w-1/2 space-y-8">
-          <h2 className="text-4xl font-black dark:text-white leading-tight">
-            Professional Roadside Help <br /> <span className="text-primary">When You Need It Most</span>
-          </h2>
-          <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
-            We understand that being stranded is stressful. Our mission is to provide the fastest, safest, and most professional car recovery service in the UAE.
-          </p>
-          <div className="space-y-4">
-            <div className="flex gap-4 items-start">
-              <div className="mt-1 bg-primary/20 p-1.5 rounded-full">
-                <span className="material-symbols-outlined text-primary text-xl font-bold">done</span>
-              </div>
-              <div>
-                <h5 className="font-bold text-xl dark:text-white">Expert Team</h5>
-                <p className="text-slate-500">Highly trained operators for delicate vehicle handling.</p>
-              </div>
+    <section className="py-20 bg-background" data-purpose="intro-content" id="about">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Text Content */}
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              Why Choose Mobile Tyre Leicestershire?
+            </h2>
+            <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
+              <p>
+                We understand that a flat tyre can happen at the worst possible time. That's why we bring the
+                garage to you, whether you're at home, work, or stuck on the roadside.
+              </p>
+              <p>
+                Our expert technicians are equipped with state-of-the-art tools to provide a seamless tyre
+                fitting service anywhere in Leicestershire. We pride ourselves on rapid response times and
+                professional excellence.
+              </p>
+              <ul className="space-y-2 pt-4">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-primary rounded-full mr-3"></span> Average 30-60 minute arrival
+                  time
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-primary rounded-full mr-3"></span> Home, work, or roadside
+                  assistance
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-primary rounded-full mr-3"></span> Experienced & certified fitters
+                </li>
+              </ul>
             </div>
-            <div className="flex gap-4 items-start">
-              <div className="mt-1 bg-primary/20 p-1.5 rounded-full">
-                <span className="material-symbols-outlined text-primary text-xl font-bold">done</span>
-              </div>
-              <div>
-                <h5 className="font-bold text-xl dark:text-white">Modern Fleet</h5>
-                <p className="text-slate-500">Equipped with latest flatbed and towing technology.</p>
-              </div>
-            </div>
-            <div className="flex gap-4 items-start">
-              <div className="mt-1 bg-primary/20 p-1.5 rounded-full">
-                <span className="material-symbols-outlined text-primary text-xl font-bold">done</span>
-              </div>
-              <div>
-                <h5 className="font-bold text-xl dark:text-white">Fair Pricing</h5>
-                <p className="text-slate-500">No hidden costs. Transparent and competitive rates.</p>
-              </div>
-            </div>
+          </div>
+          {/* Intro Image */}
+          <div className="relative group">
+            <div className="absolute -inset-2 bg-primary opacity-20 blur-xl rounded-custom group-hover:opacity-30 transition-opacity"></div>
+            <img
+              alt="Technician fitting tyre at night"
+              className="relative rounded-custom shadow-2xl w-full h-[400px] object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5gJGR847BjGQhS3okWnkpICzeSBwdPvo1tcpaUYNxaYlY_BMl6zSWcWkAMU5WtrUkqxTQNHzVABjzIGDZEWLaYFIUstF1T4G_lM-LmD3XAwbCw-HOPTeeU9E2c3MM5hPtBV5cZLmW1zG_1-1so4i7sJhYyDUCqxE-ODdsLEbIezoCkpmi-UwUmlgtzmBIbcGz2_hM2dxA38xE2zfRCz0ixlOgKKTpufOrfflYFA9qSVMGbp2QRip8E5ZqsbFchvdJPDT1PV4tPOw"
+            />
           </div>
         </div>
       </div>

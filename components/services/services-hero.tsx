@@ -1,27 +1,21 @@
-import Link from 'next/link';
-
 export default function ServicesHero() {
   return (
-    <section className="px-4 md:px-20 lg:px-40 py-12 bg-gradient-to-b from-background-dark to-[#2d2914]">
-      <div className="max-w-[1200px] mx-auto">
-        {/* Breadcrumbs */}
-        <nav className="flex items-center gap-2 mb-6 text-slate-400 text-sm">
-          <Link href="/" className="hover:text-primary transition-colors">
-            Home
-          </Link>
-          <span className="material-symbols-outlined text-xs">chevron_right</span>
-          <span className="text-primary font-medium">Services</span>
-        </nav>
-
-        <div className="max-w-2xl">
-          <h2 className="text-white text-5xl md:text-6xl font-black leading-tight tracking-tighter mb-4">
-            Professional <span className="text-primary italic">Recovery</span> Services
-          </h2>
-          <p className="text-slate-400 text-lg md:text-xl font-normal max-w-lg border-l-4 border-primary pl-6">
-            24/7 Premium Roadside Assistance & Vehicle Logistics across Abu Dhabi & the UAE.
-            We never leave you stranded.
-          </p>
-        </div>
+    <section
+      className="bg-darkBg text-center py-32 px-4"
+      style={{
+        backgroundImage: 'linear-gradient(rgba(11,22,37,0.85), rgba(11,22,37,0.95)), url(https://images.unsplash.com/photo-1605559424843-9e4c228d5c2c?auto=format&fit=crop&w=1600&q=80)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
+          OUR <span className="text-primary">TYRE SERVICES</span>
+        </h1>
+        <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+          Professional, reliable, and mobile. We bring the tyre shop directly to your doorstep — fast response,
+          zero stress, and complete peace of mind across Leicestershire.
+        </p>
       </div>
     </section>
   );

@@ -1,181 +1,107 @@
-import Link from 'next/link';
-
-interface Service {
-  id: string;
-  icon: string;
-  title: string;
-  description: string;
-  features: string[];
-  image: string;
-  alt: string;
-  buttonText: string;
-  reversed: boolean; // true = image on left, false = image on right
-}
+const services = [
+  {
+    title: 'Mobile Tyre Fitting',
+    description:
+      'Expert fitting delivered straight to your home or workplace. No garage queues. No wasted time. Just comfort and convenience when you need it most.',
+    icon: (
+      <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 6v6m0 0v6m0-6h6m-6 0H6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none" />
+      </svg>
+    ),
+    image: '/services/s1.jpg',      // s1.jpg
+  },
+  {
+    title: 'Puncture Repairs',
+    description:
+      'Fast, safe and British Standard repairs to get you confidently back on the road. Because every journey matters.',
+    icon: (
+      <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+        <path d="M12 6v6l4 2" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      </svg>
+    ),
+    image: '/services/s2.jfif',     // s2.jfif
+  },
+  {
+    title: 'Tyre Pressure Checks',
+    description:
+      'Correct tyre pressure improves fuel efficiency and safety. We ensure your tyres are road-ready and performance-optimised.',
+    icon: (
+      <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 3v4M3 5h4M6 17v4M4 19h4M13 3l4 4M17 3l-4 4M9 21l4-4M13 21l-4-4M21 13v4M19 15h4M12 7v6l4 2" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+        <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" fill="none" />
+      </svg>
+    ),
+    image: '/services/s3.jpg',      // s3.jpg
+  },
+  {
+    title: 'Seasonal Changes',
+    description:
+      'Switch between summer and winter tyres effortlessly. Stay safe in every season without lifting a finger.',
+    icon: (
+      <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2v4M12 18v4M4 12H2h2m16 0h2-2M5.636 5.636l2.828 2.828M15.536 15.536l2.828 2.828M5.636 18.364l2.828-2.828M15.536 8.464l2.828-2.828" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+        <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" fill="none" />
+      </svg>
+    ),
+    image: '/services/s4.jpg',      // s4.jpg
+  },
+  {
+    title: 'New Tyres',
+    description:
+      'Premium, mid-range, and budget options available. We help you choose the perfect tyres for your vehicle and driving style.',
+    icon: (
+      <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      </svg>
+    ),
+    image: '/services/s5.avif',     // s5.avif
+  },
+  {
+    title: 'Part-Worn Tyres',
+    description:
+      'Quality-tested and affordable. A smart choice when you need reliability without stretching your budget.',
+    icon: (
+      <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      </svg>
+    ),
+    image: '/services/s6.jpg',      // s6.jpg
+  },
+];
 
 export default function ServicesGrid() {
-  const services: Service[] = [
-    {
-      id: 'emergency-towing',
-      icon: 'emergency',
-      title: 'Emergency Towing',
-      description: 'Immediate towing for breakdowns, accidents, or unsafe situations. Available 24/7 across all UAE emirates.',
-      features: ['24/7 Availability', 'Accident Recovery', 'Breakdown Towing', 'Flatbed Service'],
-      image: '/services/s1.jpeg',
-      alt: 'Tow truck providing emergency vehicle recovery on Abu Dhabi highway',
-      buttonText: 'Request Emergency Towing',
-      reversed: false,
-    },
-    {
-      id: 'breakdown-recovery',
-      icon: 'build',
-      title: 'Breakdown Recovery',
-      description: 'Fast response for mechanical failures. We will get you and your vehicle to safety with our expert technicians.',
-      features: ['Engine Failure', 'Transmission Issues', 'Electrical Faults', 'Safe Transport'],
-      image: '/services/s2.jfif',
-      alt: 'Professional mechanic assisting with vehicle breakdown on UAE roadside',
-      buttonText: 'Get Breakdown Help',
-      reversed: true,
-    },
-    {
-      id: 'accident-recovery',
-      icon: 'warning',
-      title: 'Accident Recovery',
-      description: 'Professional collision recovery with careful handling of damaged vehicles. We manage post-accident logistics with care.',
-      features: ['Collision Recovery', 'Insurance Support', 'Careful Handling', '24/7 Response'],
-      image: '/services/s3.webp',
-      alt: 'Vehicle being recovered after accident by professional tow truck',
-      buttonText: 'Accident Assistance',
-      reversed: false,
-    },
-    {
-      id: 'roadside-assistance',
-      icon: 'support_agent',
-      title: 'Roadside Assistance',
-      description: 'On-site help for flat tyres, dead batteries, lockouts, and minor repairs. We come to you wherever you are.',
-      features: ['Flat Tyre Change', 'Battery Jump Start', 'Lockout Service', 'Minor Repairs'],
-      image: '/services/s4.jpg',
-      alt: 'Stranded driver calling for roadside assistance in UAE',
-      buttonText: 'Get Roadside Help',
-      reversed: true,
-    },
-    {
-      id: 'vehicle-transportation',
-      icon: 'local_shipping',
-      title: 'Vehicle Transportation',
-      description: 'Safe, long-distance transport for non-drivable vehicles across Dubai and all Emirates. Professional handling guaranteed.',
-      features: ['Long Distance', 'Multi-Vehicle', 'Secure Strapping', 'Insurance Covered'],
-      image: '/services/s5.jpg',
-      alt: 'Car transporter vehicle carrying cars for delivery across UAE',
-      buttonText: 'Arrange Transport',
-      reversed: false,
-    },
-    {
-      id: 'jump-start',
-      icon: 'bolt',
-      title: 'Jump Start Service',
-      description: 'Quick battery jump start to get you back on the road in minutes. We use professional-grade equipment for all vehicle types.',
-      features: ['15 Min Response', 'All Vehicles', 'Battery Testing', 'Professional Gear'],
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuByL3mC5rfyjIomwE5o9bUE0dhU3TPTW0YmY8aZgh1T5l2cq9K4cbHCJlK6FvwPWT7cYaCzb_dCPFoG1c6DNwkJNBKiR7luogy6wg_x1XKhnZphJasy3vvgOK4O6HE_zviZD3jSDqXnpt5eeeIzWz4p070vi1UURfj13c43DP0De4JgP8Dhcs76OE3YjPTiSqroT31eSCEYSZ5DjiNbd6975nyKU3b38uaAcGOFeiDuNFlCE8L-b-AzwlqPzfVbeC_2sqCh0YACZoo',
-      alt: 'Professional mechanic using jump starter on car battery',
-      buttonText: 'Request Jump Start',
-      reversed: true,
-    },
-    {
-      id: 'flat-tyre',
-      icon: 'tire_repair',
-      title: 'Flat Tyre Change',
-      description: 'Professional tyre replacement service at your location. We carry spare tyres and repair equipment for quick solutions.',
-      features: ['Quick Replacement', 'Puncture Repair', 'Spare Available', '24/7 Service'],
-      image: '/services/s7.jpeg',
-      alt: 'Technician changing flat tyre on a vehicle in UAE',
-      buttonText: 'Fix My Tyre',
-      reversed: false,
-    },
-    {
-      id: 'fuel-delivery',
-      icon: 'local_gas_station',
-      title: 'Fuel Delivery',
-      description: 'Emergency fuel delivery if you run out of petrol or diesel. We bring the fuel to you anywhere in Dubai and Abu Dhabi.',
-      features: ['Petrol & Diesel', 'Emergency Supply', 'Quick Response', '24/7 Service'],
-      image: '/services/s8.jfif',
-      alt: 'ENOC fuel delivery vehicle providing emergency petrol in Dubai',
-      buttonText: 'Get Fuel Delivery',
-      reversed: true,
-    },
-  ];
-
   return (
-    <>
-      {services.map((service, index) => (
-        <section
-          key={service.id}
-          className={`px-4 md:px-20 lg:px-40 py-16 relative overflow-hidden ${
-            service.reversed ? 'bg-[#2d2914]/30' : ''
-          }`}
-        >
-          {/* subtle background pattern */}
-          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-primary/5 to-transparent pointer-events-none"></div>
-
-          <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
-            {/* Content Column */}
-            <div
-              className={`order-2 ${
-                service.reversed ? 'md:order-2' : 'md:order-1'
-              } transition-all duration-500`}
-            >
-              <div className="flex flex-col gap-6 p-4 rounded-2xl hover:bg-white/5 transition-colors">
-                <div className="flex items-center gap-3">
-                  <span className="bg-primary/10 text-primary p-3 rounded-xl material-symbols-outlined text-3xl transition-all duration-300 hover:scale-110 hover:bg-primary/20">
-                    {service.icon}
-                  </span>
-                  <h3 className="text-3xl font-black text-white">{service.title}</h3>
-                </div>
-                <p className="text-slate-400 text-lg leading-relaxed">{service.description}</p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-medium text-slate-300">
-                  {service.features.map((feature, i) => (
-                    <li
-                      key={i}
-                      className="flex items-center gap-2 p-2 rounded-lg transition-all duration-300 hover:bg-primary/10 hover:scale-[1.02]"
-                    >
-                      <span className="material-symbols-outlined text-primary text-lg">
-                        check_circle
-                      </span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href={`/services/${service.id}`}
-                  className="w-fit flex items-center justify-center rounded-lg h-12 px-8 bg-slate-800 text-white hover:bg-primary hover:text-background-dark transition-all duration-300 font-bold group shadow-lg hover:shadow-primary/30"
-                >
-                  {service.buttonText}
-                  <span className="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">
-                    arrow_forward
-                  </span>
-                </Link>
-              </div>
+    <section className="bg-darkBg py-20 px-4">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service, index) => (
+          <div
+            key={index}
+            className="bg-darkCard border border-darkBorder rounded-custom p-6 transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-xl hover:shadow-primary/10"
+          >
+            <img
+              src={service.image}
+              alt={service.title}
+              className="w-full h-48 object-cover rounded-custom mb-5"
+            />
+            <div className="flex items-start gap-3 mb-3">
+              <div className="flex-shrink-0">{service.icon}</div>
+              <h3 className="text-xl font-bold">{service.title}</h3>
             </div>
-
-            {/* Image Column */}
-            <div
-              className={`order-1 ${
-                service.reversed ? 'md:order-1' : 'md:order-2'
-              }`}
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              {service.description}
+            </p>
+            <a
+              href="#"
+              className="text-primary font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all"
             >
-              <div className="relative group">
-                <div className="absolute -inset-2 bg-primary/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-700"></div>
-                <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-primary/30">
-                  <img
-                    src={service.image}
-                    alt={service.alt}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                </div>
-              </div>
-            </div>
+              Find out more
+              <span aria-hidden="true" className="text-lg">→</span>
+            </a>
           </div>
-        </section>
-      ))}
-    </>
+        ))}
+      </div>
+    </section>
   );
 }

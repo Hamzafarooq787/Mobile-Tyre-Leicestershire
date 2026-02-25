@@ -1,22 +1,21 @@
-import Link from 'next/link';
-
 export default function ContactHero() {
   return (
-    <section className="relative pt-16 pb-12 px-4">
-      <div className="max-w-7xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary mb-6">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-          </span>
-          <span className="text-[10px] font-bold uppercase tracking-widest">
-            Available 24/7 in Abu Dhabi
-          </span>
-        </div>
-        <h2 className="text-5xl md:text-7xl font-black tracking-tight mb-6">Contact Us</h2>
-        <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
-          Stuck on the road? Need vehicle transport? Our team is ready to assist you anywhere in
-          Abu Dhabi within minutes.
+    <section
+      className="relative h-[400px] flex items-center justify-center overflow-hidden"
+      data-purpose="contact-hero"
+    >
+      {/* Background Image Overlay */}
+      <div className="absolute inset-0 bg-black/60 z-10"></div>
+      <img
+        alt="Phone ringing in van at night"
+        className="absolute inset-0 w-full h-full object-cover"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV4mSrbZ9XmQn9nv6PEk8mL_mGMzcaJBeuULJWFEBHJRD8vSIk4ex68EIGPLSfp9QM9rwXm2erSIF2zqOXVyTMADafx1Uz22sZbPaOQjd96BKgHaZm9eESBa4GzfdQ3a14TCgaMDF31YapXC7V7ixeNQFklhu31M8tNtTdOoIT39JWCe7N9gI7YT-4iWQf0rPrTCuh4Ao5c2Srhwz5vJn5RdWcsNGAzpLta0DUWkZwoPCDZ-NiBa06OK-pnHG8xWfmILT-2HjWHbM"
+      />
+      <div className="relative z-20 text-center px-4">
+        <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-4">Get in Touch</h1>
+        <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+          Providing 24/7 emergency roadside tyre assistance across Leicestershire. We're always here when you
+          need us.
         </p>
       </div>
     </section>

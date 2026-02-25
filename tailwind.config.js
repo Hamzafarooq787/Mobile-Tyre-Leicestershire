@@ -1,6 +1,6 @@
 // tailwind.config.js
 module.exports = {
-  darkMode: 'class', // or 'media' depending on your setup
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
